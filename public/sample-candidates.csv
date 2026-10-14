@@ -1,0 +1,9 @@
+id,name,email,role,stage,lastMovedAt,owner
+C001,Sarah Johnson,sarah@example.com,Frontend Developer,Interview,2026-09-28,Alex
+C002,David Cole,david@example.com,Product Designer,Screening,2026-10-10,Maria
+C003,Grace Lee,grace@example.com,Backend Engineer,Offer,2026-09-20,Alex
+C004,Michael Brown,michael@example.com,QA Engineer,Applied,2026-10-11,John
+C005,Amina Yusuf,amina@example.com,Data Analyst,Assessment,2026-10-03,Maria
+C006,Olivia Green,olivia@example.com,Frontend Developer,Hired,2026-09-10,Alex
+C007,Noah Adams,noah@example.com,DevOps Engineer,Interview,2026-10-05,John
+C008,Chidi Okafor,chidi@example.com,Product Manager,Applied,2026-09-15,Maria
