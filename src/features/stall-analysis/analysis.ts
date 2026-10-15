@@ -29,6 +29,7 @@ export function validateRows(rows: Record<string,unknown>[], today: string): Par
     const field = (key:string) => String(row[key] ?? '').trim();
     const id=field('id'), name=field('name'), email=field('email'), role=field('role'), stage=field('stage'), lastMovedAt=field('lastMovedAt'), owner=field('owner');
     if (![id,name,email,role,stage,lastMovedAt,owner].every(Boolean)) { errors.push(`Row ${line}: required field missing.`); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errors.push(`Row ${line}: invalid email address.`); return; }
     if (seen.has(id)) { errors.push(`Row ${line}: duplicate candidate ID ${id}.`); return; }
     if (!STAGES.includes(stage as Stage)) { errors.push(`Row ${line}: unsupported stage "${stage}".`); return; }
     if (!validDate(lastMovedAt)) { errors.push(`Row ${line}: invalid date "${lastMovedAt}"; use YYYY-MM-DD.`); return; }
@@ -37,6 +38,9 @@ export function validateRows(rows: Record<string,unknown>[], today: string): Par
     candidates.push({id,name,email,role,stage:stage as Stage,lastMovedAt,owner});
   });
   return {candidates,errors};
+}
+export function candidateDaysInStage(candidate: Candidate, today: string): number {
+  return daysSince(candidate.lastMovedAt, today);
 }
 export function analyze(candidates: Candidate[], threshold: number, today: string): Flag[] {
   if (!Number.isInteger(threshold) || threshold < 1 || threshold > 365) throw new Error('Threshold must be between 1 and 365 days.');
