@@ -83,3 +83,13 @@ To verify, run `npm install && npm test && npm run build`, then `npm run dev`. U
 
 ## Day 2 commit
 Suggested commit: `feat(day-2): improve candidate review and CSV upload validation`
+
+
+## Day 3: load and edge-case tests
+
+Use the bundled fixtures in `public/test-data/`:
+- `stress-500.csv`: 500 synthetic candidates
+- `stress-5000.csv`: 5,000 synthetic candidates
+- `stress-invalid.csv`: 1 valid row and 6 invalid rows
+
+Upload these using the UI. The table now pages through matching results (10/25/50/100 rows per page). Export still includes all matching flagged records, not just the current page. Run `npm test` and `npm run build` and record outcomes in `docs/daily-logs/day-3.md`. These synthetic records contain no real candidate information.

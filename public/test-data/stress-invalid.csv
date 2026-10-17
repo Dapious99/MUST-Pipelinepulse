@@ -1,0 +1,8 @@
+id,name,email,role,stage,lastMovedAt,owner
+X001,Good Candidate,good@example.test,Engineer,Interview,2026-10-01,Alex
+X001,Duplicate,duplicate@example.test,Engineer,Offer,2026-10-02,Alex
+X003,Impossible Date,date@example.test,Engineer,Interview,2026-02-30,Alex
+X004,Future Date,future@example.test,Engineer,Screening,2027-01-01,Alex
+X005,Missing Owner,missing@example.test,Engineer,Applied,2026-10-01,
+X006,Bad Email,not-an-email,Engineer,Applied,2026-10-01,Alex
+X007,Bad Stage,stage@example.test,Engineer,Paused,2026-10-01,Alex

@@ -46,7 +46,7 @@ export function analyze(candidates: Candidate[], threshold: number, today: strin
   if (!Number.isInteger(threshold) || threshold < 1 || threshold > 365) throw new Error('Threshold must be between 1 and 365 days.');
   if (!validDate(today)) throw new Error('Analysis date must be YYYY-MM-DD.');
   return candidates.flatMap(c => {
-    if (CLOSED.has(c.stage)) return [];
+    if (CLOSED.has(c.stage) || !validDate(c.lastMovedAt) || daysSince(c.lastMovedAt,today)<0) return [];
     const daysStalled=daysSince(c.lastMovedAt,today);
     if (daysStalled < threshold) return [];
     const overdueDays=daysStalled-threshold;

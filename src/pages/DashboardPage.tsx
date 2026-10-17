@@ -26,7 +26,7 @@ export function DashboardPage(){
    if (!result.candidates.length) throw new Error(result.errors[0]||'No valid candidates found in this CSV.');
    setFilename(file.name);setCandidates(result.candidates);setErrors(result.errors);
    setView('stalled');setPriority('All');setStage('All');setOwner('All');setQuery('');
-   setImportStatus({state:'success',message:`${result.candidates.length} candidate${result.candidates.length===1?'':'s'} imported successfully.`,count:result.candidates.length,rejected:result.errors.length});
+   setImportStatus({state:'success',message:`${result.candidates.length} candidate${result.candidates.length===1?'':'s'} imported${result.errors.length?` with ${result.errors.length} issue(s) to review`: ' successfully'}.`,count:result.candidates.length,rejected:result.errors.length});
   } catch(e) {
    const message=e instanceof Error?e.message:'Could not read CSV';
    setImportStatus({state:'error',message});
