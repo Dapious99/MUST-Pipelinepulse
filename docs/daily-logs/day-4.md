@@ -17,3 +17,12 @@ No backend, persistence, audit trail, or real recruiting-system revoke API. This
 
 ## Reflection (fill in after verification)
 What failed: TBD. What I changed after testing: TBD. Habit I challenged: TBD.
+
+### Follow-up UI feedback
+User reported not seeing the Actions area. Code inspection confirmed actions existed at the far-right of a horizontally scrollable table. Updated the Actions header and cells to be sticky on the right; browser verification is still required.
+
+### Iteration: action menu discoverability and permissions
+- User requested replacing inline Edit/Revoke buttons with an ellipsis-triggered floating card.
+- Active candidates have **Edit candidate** and **Revoke**. Revoked candidates have **Restore** only; Edit and Revoke are not rendered.
+- Menu renders in a portal so the table's horizontal overflow cannot clip it. It closes on outside click, Escape, scrolling, and selecting an action.
+- Verification pending: run `npm run build`, `npm test`, and manually check both active and revoked rows.

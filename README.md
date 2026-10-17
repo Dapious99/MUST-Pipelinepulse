@@ -93,3 +93,10 @@ Use the bundled fixtures in `public/test-data/`:
 - `stress-invalid.csv`: 1 valid row and 6 invalid rows
 
 Upload these using the UI. The table now pages through matching results (10/25/50/100 rows per page). Export still includes all matching flagged records, not just the current page. Run `npm test` and `npm run build` and record outcomes in `docs/daily-logs/day-3.md`. These synthetic records contain no real candidate information.
+
+## Day 4 candidate actions
+
+Use **Edit** to update a candidate record and recalculate stalls, **Revoke** to exclude a record from active analysis (confirmation required), and **Restore** to reactivate it. These changes are in-memory only and reset on refresh or CSV import; they do not contact candidates or an external ATS.
+
+### Day 4 actions visibility fix
+The Actions column (Edit, Revoke, Restore) is pinned to the right side of the candidate table, including on narrow screens. Actions remain local to the current session.
