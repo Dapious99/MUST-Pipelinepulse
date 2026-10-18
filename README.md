@@ -100,3 +100,9 @@ Use **Edit** to update a candidate record and recalculate stalls, **Revoke** to 
 
 ### Day 4 actions visibility fix
 The Actions column (Edit, Revoke, Restore) is pinned to the right side of the candidate table, including on narrow screens. Actions remain local to the current session.
+
+## Day 5 — Submission
+
+Final deliverables are under `docs/`: initial [`intent.md`](docs/intent.md), [`Final directive.md`](docs/Final%20directive.md), [`unlearning.md`](docs/unlearning.md), five [`daily-logs`](docs/daily-logs/), and [`SUBMISSION-GUIDE.md`](docs/SUBMISSION-GUIDE.md).
+
+Before submission, run `npm install`, `npm test`, `npm run build`, and `npm run dev` locally. Record actual results in the Day 5 log. The five-minute Loom video must be recorded separately and linked in the submission portal.
